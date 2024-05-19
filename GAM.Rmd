@@ -1,0 +1,61 @@
+---
+title: "GAM"
+output: html_document
+date: "2024-05-19"
+---
+
+```{r}
+library(MASS)
+library(mgcv)
+install.packages("tidyverse")
+library(tidyverse)
+```
+```{r}
+data <- read.csv('/Users/arthurrastelli/Desktop/DS/Assignment/Assignment.csv',sep=",")
+colnames(data)[colnames(data)=="duree"] <- "expo"
+colnames(data)[colnames(data)=="nbrtotan"] <- "freq"
+colnames(data)[colnames(data)=="nbrtotc"] <- "nclaims"
+
+data['sev'] = data['chargtot'] / data['nclaims']
+
+head(data)
+```
+
+
+FREQUENCY: 
+```{r pressure, echo=FALSE}
+bias_model <- gam(freq ~ s(AGEPH, k=10), data=data, sp=3)
+plot(bias_model, scheme=4)
+
+data$prediction <- predict(bias_model,data)
+
+KULbg <- "#116E8A"
+frequency <- ggplot(data, aes(AGEPH, freq)) + theme_bw() + 
+  geom_point(alpha = .3) + 
+  geom_line(aes(AGEPH, prediction), size = 1.0, color = KULbg) +
+  scale_x_continuous(expand = c(0, 0)) + 
+  ggtitle("sp = 3 and default k")
+frequency
+```
+
+SEVERITY
+```{r}
+bias_model2 <- gam(sev ~ s(AGEPH, k=10), data=data, sp=3)
+plot(bias_model2, scheme=4)
+
+data$prediction <- predict(bias_model,data)
+
+KULbg <- "#116E8A"
+severity <- ggplot(data, aes(AGEPH, sev)) + theme_bw() + 
+  geom_point(alpha = .3) + 
+  geom_line(aes(AGEPH, prediction), size = 1.0, color = KULbg) +
+  scale_x_continuous(expand = c(0, 0)) + 
+  ggtitle("sp = 3 and default k")
+severity
+
+```
+
+```{r}
+
+```
+
