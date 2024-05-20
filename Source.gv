@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<ageph &le; 31.5<br/>poisson = 0.31<br/>samples = 130925<br/>value = 0.139>, fillcolor="#f8dfcd"] ;
+1 [label=<ageph &le; 26.5<br/>poisson = 0.395<br/>samples = 22255<br/>value = 0.208>, fillcolor="#efaf82"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<ageph &le; 23.5<br/>poisson = 0.434<br/>samples = 9031<br/>value = 0.245>, fillcolor="#e9965a"] ;
+1 -> 2 ;
+3 [label=<poisson = 0.461<br/>samples = 2858<br/>value = 0.275>, fillcolor="#e58139"] ;
+2 -> 3 ;
+4 [label=<poisson = 0.421<br/>samples = 6173<br/>value = 0.232>, fillcolor="#eb9f68"] ;
+2 -> 4 ;
+5 [label=<agecar &le; 2.5<br/>poisson = 0.366<br/>samples = 13224<br/>value = 0.183>, fillcolor="#f2c19d"] ;
+1 -> 5 ;
+6 [label=<poisson = 0.349<br/>samples = 10367<br/>value = 0.173>, fillcolor="#f4c7a8"] ;
+5 -> 6 ;
+7 [label=<poisson = 0.423<br/>samples = 2857<br/>value = 0.219>, fillcolor="#eda876"] ;
+5 -> 7 ;
+8 [label=<ageph &le; 57.5<br/>poisson = 0.289<br/>samples = 108670<br/>value = 0.126>, fillcolor="#fae8db"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<fuelc &le; 0.5<br/>poisson = 0.307<br/>samples = 74982<br/>value = 0.138>, fillcolor="#f9e0ce"] ;
+8 -> 9 ;
+10 [label=<poisson = 0.319<br/>samples = 26252<br/>value = 0.15>, fillcolor="#f7d7c1"] ;
+9 -> 10 ;
+11 [label=<poisson = 0.3<br/>samples = 48730<br/>value = 0.132>, fillcolor="#f9e4d5"] ;
+9 -> 11 ;
+12 [label=<fuelc &le; 0.5<br/>poisson = 0.247<br/>samples = 33688<br/>value = 0.099>, fillcolor="#fefbf8"] ;
+8 -> 12 ;
+13 [label=<poisson = 0.283<br/>samples = 6762<br/>value = 0.124>, fillcolor="#fbeade"] ;
+12 -> 13 ;
+14 [label=<poisson = 0.237<br/>samples = 26926<br/>value = 0.093>, fillcolor="#ffffff"] ;
+12 -> 14 ;
+}

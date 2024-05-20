@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="x[0] <= 31.5\npoisson = 0.31\nsamples = 130925\nvalue = 0.139"] ;
+1 [label="x[0] <= 26.5\npoisson = 0.395\nsamples = 22255\nvalue = 0.208"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="x[0] <= 23.5\npoisson = 0.434\nsamples = 9031\nvalue = 0.245"] ;
+1 -> 2 ;
+3 [label="poisson = 0.461\nsamples = 2858\nvalue = 0.275"] ;
+2 -> 3 ;
+4 [label="poisson = 0.421\nsamples = 6173\nvalue = 0.232"] ;
+2 -> 4 ;
+5 [label="x[1] <= 2.5\npoisson = 0.366\nsamples = 13224\nvalue = 0.183"] ;
+1 -> 5 ;
+6 [label="poisson = 0.349\nsamples = 10367\nvalue = 0.173"] ;
+5 -> 6 ;
+7 [label="poisson = 0.423\nsamples = 2857\nvalue = 0.219"] ;
+5 -> 7 ;
+8 [label="x[0] <= 57.5\npoisson = 0.289\nsamples = 108670\nvalue = 0.126"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label="x[2] <= 0.5\npoisson = 0.307\nsamples = 74982\nvalue = 0.138"] ;
+8 -> 9 ;
+10 [label="poisson = 0.319\nsamples = 26252\nvalue = 0.15"] ;
+9 -> 10 ;
+11 [label="poisson = 0.3\nsamples = 48730\nvalue = 0.132"] ;
+9 -> 11 ;
+12 [label="x[2] <= 0.5\npoisson = 0.247\nsamples = 33688\nvalue = 0.099"] ;
+8 -> 12 ;
+13 [label="poisson = 0.283\nsamples = 6762\nvalue = 0.124"] ;
+12 -> 13 ;
+14 [label="poisson = 0.237\nsamples = 26926\nvalue = 0.093"] ;
+12 -> 14 ;
+}
